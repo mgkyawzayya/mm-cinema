@@ -68,45 +68,21 @@
     <div class="container">
       <div class="movie-title text-center">
         <div class="row">
-          <div class="col-md-4">
-            <div class="card card-profile card-plain">
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="card-header card-header-image">
-                    <a href="#pablo">
-                      <img class="img" src="{{ url('images/movie-1.jpg') }}">
-                    </a>
-                  </div>
+            @foreach( $movies as $movie )
+                <div class="col-md-4">
+                    <div class="card card-profile card-plain">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="card-header card-header-image">
+                                    <a href="{{ url('now/'. $movie->id) }}">
+                                        <img class="img" src="{{ asset('images/movies/'. $movie->photo) }}">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card card-profile card-plain">
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="card-header card-header-image">
-                    <a href="#pablo">
-                      <img class="img" src="images/movie-1.jpg">
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card card-profile card-plain">
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="card-header card-header-image">
-                    <a href="#pablo">
-                      <img class="img" src="images/movie-1.jpg">
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+            @endforeach
         </div>
       </div>
     </div>

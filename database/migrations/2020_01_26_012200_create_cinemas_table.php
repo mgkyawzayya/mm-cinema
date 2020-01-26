@@ -15,6 +15,11 @@ class CreateCinemasTable extends Migration
     {
         Schema::create('cinemas', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->text('name');
+            $table->text('address');
+            $table->text('phone');
+            $table->text('city');
+            $table->integer('movie_id');
             $table->timestamps();
         });
     }

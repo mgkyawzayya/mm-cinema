@@ -89,8 +89,8 @@
                 <a href="#pablo" class="btn btn-just-icon btn-link btn-facebook">
                   <i class="fa fa-facebook-square"></i>
                 </a>
-                <a href="#pablo" class="btn btn-just-icon btn-link btn-google">
-                  <i class="fa fa-google"></i>
+                <a href="#pablo" class="btn btn-just-icon btn-link btn-github">
+                  <i class="fa fa-github"></i>
                 </a>
               </div>
             </div>

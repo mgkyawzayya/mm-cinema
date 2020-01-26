@@ -3,21 +3,31 @@
 
 Route::get('/', 'MovieController@index');
 Route::get('/now', 'MovieController@now');
+Route::get('/now/{id}', 'MovieController@show');
+
 Route::get('/coming', 'MovieController@coming');
-Route::get('/show', 'MovieController@show');
+
+Route::get('/movie/create', 'MovieController@create');
+Route::post('/movie/store', 'MovieController@store');
+Route::get('/movie/edit/{id}', 'MovieController@edit');
+Route::post('/movie/update', 'MovieController@update');
 
 
-Route::get('/city/yangon', 'CinemaController@index');
-Route::get('/city/yangon/show', 'CinemaController@show');
+Route::post('/ticket/store', 'TicketController@store');
+
+
+Route::get('/city/{name}', 'CinemaController@index');
+Route::get('/city/{name}/cinema/show/{id}', 'CinemaController@show');
+
+Route::get('/{city}/ticket', 'TicketController@index');
+Route::get('/{city}/cinema', 'CinemaController@cinema');
 
 Route::get('/about', function () {
   return view('about');
 });
 
 
-Route::get('/dashboard', function () {
-  return view('admin.index');
-});
+Route::get('/dashboard', 'DashboardController@index');
 
 Route::get('qr', function () {
   \QrCode::size(500)

@@ -1,6 +1,6 @@
-@extends('layouts.dashboard')
+        @extends('layouts.dashboard')
 @section('content')
-  <div class="sidebar" data-color="purple" data-background-color="white" data-image="">
+  <div class="sidebar" data-color="green" data-background-color="white" data-image="">
     <div class="logo">
       <a href="#" class="simple-text logo-normal">
         MM-Cinema
@@ -8,41 +8,109 @@
     </div>
     <div class="sidebar-wrapper">
       <ul class="nav">
-        <li class="nav-item">
-          <a class="nav-link" href="{{ url('/dashboard') }}">
-            <i class="material-icons">dashboard</i>
-            <p>Dashboard</p>
-          </a>
-        </li>
         <li class="nav-item active">
-          <a class="nav-link" href="{{ url('/king') }}">
+          <a class="nav-link" href="{{ url('/dashboard') }}">
             <i class="fa fa-film" aria-hidden="true"></i>
             <p>Movies</p>
           </a>
         </li>
         <li class="nav-item ">
-          <a class="nav-link" href="{{ url('/queen') }}">
-            <i class="fa fa-ticket" aria-hidden="true"></i>
-            <p>Ticket</p>
-          </a>
-        </li>
-
-        <li class="nav-item ">
           <a class="nav-link" data-toggle="collapse" href="#pagesExamples">
             <i class="material-icons">home</i>
-            <p> City
+            <p> Yangon
               <b class="caret"></b>
             </p>
           </a>
           <div class="collapse" id="pagesExamples">
             <ul class="nav">
               <li class="nav-item ">
-                <a class="nav-link" href="../examples/pages/pricing.html">
-                  <i class="fa fa-home"></i>
-                  <span class="sidebar-normal">Yangon</span>
+                <a class="nav-link" href="{{ url('yangon/ticket') }}">
+                  <i class="fa fa-ticket"></i>
+                  <span class="sidebar-normal">Ticket</span>
                 </a>
               </li>
 
+                <li class="nav-item ">
+                    <a class="nav-link" href="{{ url('yangon/cinema') }}">
+                        <i class="fa fa-film"></i>
+                        <span class="sidebar-normal">Cinema</span>
+                    </a>
+                </li>
+            </ul>
+          </div>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" data-toggle="collapse" href="#pagesExamples">
+            <i class="material-icons">home</i>
+            <p> Mandalay
+              <b class="caret"></b>
+            </p>
+          </a>
+          <div class="collapse" id="pagesExamples">
+            <ul class="nav">
+              <li class="nav-item ">
+                <a class="nav-link" href="{{ url('mandalay/ticket') }}">
+                  <i class="fa fa-ticket"></i>
+                  <span class="sidebar-normal">Ticket</span>
+                </a>
+              </li>
+
+              <li class="nav-item ">
+                <a class="nav-link" href="{{ url('mandalay/cinema') }}">
+                  <i class="fa fa-film"></i>
+                  <span class="sidebar-normal">Cinema</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" data-toggle="collapse" href="#pagesExamples">
+            <i class="material-icons">home</i>
+            <p> NayPyiTaw
+              <b class="caret"></b>
+            </p>
+          </a>
+          <div class="collapse" id="pagesExamples">
+            <ul class="nav">
+              <li class="nav-item ">
+                <a class="nav-link" href="{{ url('naypyitaw/ticket') }}">
+                  <i class="fa fa-ticket"></i>
+                  <span class="sidebar-normal">Ticket</span>
+                </a>
+              </li>
+
+              <li class="nav-item ">
+                <a class="nav-link" href="{{ url('naypyitaw/cinema') }}">
+                  <i class="fa fa-film"></i>
+                  <span class="sidebar-normal">Cinema</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" data-toggle="collapse" href="#pagesExamples">
+            <i class="material-icons">home</i>
+            <p> Pakokku
+              <b class="caret"></b>
+            </p>
+          </a>
+          <div class="collapse" id="pagesExamples">
+            <ul class="nav">
+              <li class="nav-item ">
+                <a class="nav-link" href="{{ url('pakokku/ticket') }}">
+                  <i class="fa fa-ticket"></i>
+                  <span class="sidebar-normal">Ticket</span>
+                </a>
+              </li>
+
+              <li class="nav-item ">
+                <a class="nav-link" href="{{ url('pakokku/cinema') }}">
+                  <i class="fa fa-film"></i>
+                  <span class="sidebar-normal">Cinema</span>
+                </a>
+              </li>
             </ul>
           </div>
         </li>
@@ -90,25 +158,91 @@
     <!-- End Navbar -->
     <div class="content">
       <div class="container-fluid">
-        <a href="{{ url('king/create') }}" class="btn btn-primary btn-round text-right">New</a>
+        <a href="{{ url('movie/create') }}" class="btn btn-success btn-round text-right">New</a>
         <div class="row">
           <div class="col-md-12">
             <div class="card">
-              <div class="card-header card-header-primary">
-                <h4 class="card-title ">King List</h4>
+              <div class="card-header card-header-success">
+                <h4 class="card-title ">Now Showing Movies</h4>
               </div>
               <div class="card-body">
                 <div class="table-responsive">
                   <table class="table">
-                    <thead class=" text-primary">
+                    <thead class=" text-success">
                     <th>
-                      ID
+                      Title
                     </th>
                     <th>
-                      Name
+                      Director
                     </th>
                     <th>
-                      No
+                      Cast
+                    </th>
+                    <th>
+                      Date
+                    </th>
+                    <th>
+                      Action
+                    </th>
+                    </thead>
+                    <tbody>
+                    @foreach( $movies as $movie)
+                        <tr>
+                            <td>
+                                {{ $movie->title }}
+                            </td>
+                            <td>
+                                {{ $movie->director }}
+                            </td>
+                            <td>
+                                {{ $movie->cast }}
+                            </td>
+                            <td>
+                                {{ $movie->date }}
+                            </td>
+                            <td class="td-actions">
+                                <a href="{{ url('/movie/edit/' . $movie->id) }}" class="btn btn-success btn-round">
+                                    <i class="material-icons">edit</i>
+                                </a>
+                                <form action="{{ url('/movie/destroy/' . $movie->id) }}" method="post">
+                                    {{ csrf_field() }}
+                                    {{ method_field('delete') }}
+                                    <button class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this item?');">
+                                        <i class="material-icons">delete</i>
+                                    </button>
+                                </form>
+                            </td>
+                        </tr>
+                    @endforeach
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-header card-header-success">
+                <h4 class="card-title ">Up Coming Movies</h4>
+              </div>
+              <div class="card-body">
+                <div class="table-responsive">
+                  <table class="table">
+                    <thead class=" text-success">
+                    <th>
+                      Title
+                    </th>
+                    <th>
+                      Director
+                    </th>
+                    <th>
+                      Cast
+                    </th>
+                    <th>
+                      Date
                     </th>
                     <th>
                       Action

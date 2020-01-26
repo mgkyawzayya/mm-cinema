@@ -16,7 +16,7 @@
       </div>
       <div class="collapse navbar-collapse">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
+          <li class="nav-item">
             <a class="nav-link" href="{{ url('/') }}">
               <i class="material-icons">home</i> Home
             </a>
@@ -73,25 +73,22 @@
               <div class="col-md-4">
                 <div class="card-header card-header-image">
                   <a href="#pablito">
-                    <img class="img" src="images/movie-1.jpg">
+                    <img class="img" src="{{ asset('images/movies/'. $movie->photo) }}">
                   </a>
-                  <div class="colored-shadow" style="background-image: url(&quot;./assets/img/examples/card-blog4.jpg&quot;); opacity: 1;"></div></div>
+                  <div class="colored-shadow" style="background-image: url(); opacity: 1;"></div></div>
               </div>
               <div class="col-md-8">
                 <h2 class="card-title">
-                  Title - Sonic The Head Dog
+                  Title - {{ $movie->title }}
                 </h2>
                 <h4 class="card-title">
-                  Directed By -
+                  Directed By - {{ $movie->director }}
                 </h4>
                 <h4 class="card-title">
-                  Cast -
+                  Cast - {{ $movie->cast }}
                 </h4>
                 <h4 class="card-title">
-                  Date -
-                </h4>
-                <h4 class="card-title">
-                  Type -
+                  Date - {{ $movie->date }}
                 </h4>
               </div>
             </div>

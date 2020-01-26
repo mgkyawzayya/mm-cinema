@@ -99,6 +99,21 @@
                     <i class="material-icons">bookmark</i>
                     Book Now
                     <div class="ripple-container"></div></button>
+                    @if (count($errors) > 0)
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+
+                    @if(session('success'))
+                        <div class="alert alert-success">
+                            {{ session('success') }}
+                        </div>
+                    @endif
                 </div>
               </div>
             </div>
@@ -119,7 +134,8 @@
             </div>
           </div>
           <div class="modal-body">
-            <form class="form" method="POST" action="">
+            <form class="form" method="POST" action="{{ url('ticket/store') }}">
+                {{ csrf_field() }}
               <div class="card-body">
                 <div class="form-group">
                   <div class="input-group">
@@ -128,7 +144,7 @@
                         <i class="material-icons">face</i>
                       </span>
                     </div>
-                    <input type="text" class="form-control" placeholder="Enter Your Name">
+                    <input type="text" name="name" class="form-control" placeholder="Enter Your Name">
                   </div>
                 </div>
                 <div class="form-group">
@@ -138,7 +154,7 @@
                         <i class="material-icons">phone</i>
                       </span>
                     </div>
-                    <input type="number" class="form-control" placeholder="Enter Phone No">
+                    <input type="number" name="phone" class="form-control" placeholder="Enter Phone No">
                   </div>
                 </div>
 
@@ -149,7 +165,7 @@
                         <i class="material-icons">event_seat</i>
                       </span>
                     </div>
-                    <input type="number" class="form-control" placeholder="Number of Seat">
+                    <input type="number" name="seat" class="form-control" placeholder="Number of Seat">
                   </div>
                 </div>
                 <div class="form-group">
@@ -161,9 +177,9 @@
                     </div>
                     <select id="time" class="form-control" required>
                       <option value="" label="" selected hidden></option>
-                      <option>10:30PM</option>
-                      <option>1:00PM</option>
-                      <option>4:00PM</option>
+                      <option name="time">10:30PM</option>
+                      <option name="time">1:00PM</option>
+                      <option name="time">4:00PM</option>
                     </select>
                   </div>
                 </div>
@@ -176,9 +192,9 @@
                     </div>
                     <select id="price" class="form-control" required>
                       <option value="" label="&nbsp;" selected hidden></option>
-                      <option>1200KS</option>
-                      <option>2000KS</option>
-                      <option>2800KS</option>
+                      <option name="price">1200KS</option>
+                      <option name="price">2000KS</option>
+                      <option name="price">2800KS</option>
                     </select>
                   </div>
                 </div>
@@ -189,12 +205,10 @@
                         <i class="material-icons">calendar_today</i>
                       </span>
                     </div>
-                    <input type="date" class="form-control datepicker" placeholder="Date">
+                    <input type="date" name="date" class="form-control datepicker" placeholder="Date">
                   </div>
                 </div>
-                <div class="modal-footer justify-content-center">
-                  <a href="#pablo" class="btn btn-primary btn-round">Confirm</a>
-                </div>
+                  <button type="submit" class="btn btn-success btn-round text-center">Confirm</button>
               </div>
             </form>
           </div>
