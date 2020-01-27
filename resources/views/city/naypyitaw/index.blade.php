@@ -8,7 +8,7 @@
         </div>
         <div class="sidebar-wrapper">
             <ul class="nav">
-                <li class="nav-item active">
+                <li class="nav-item">
                     <a class="nav-link" href="{{ url('/dashboard') }}">
                         <i class="fa fa-film" aria-hidden="true"></i>
                         <p>Movies</p>
@@ -39,7 +39,7 @@
                         </ul>
                     </div>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item ">
                     <a class="nav-link" data-toggle="collapse" href="#mandalay">
                         <i class="material-icons">home</i>
                         <p> Mandalay
@@ -55,7 +55,7 @@
                                 </a>
                             </li>
 
-                            <li class="nav-item">
+                            <li class="nav-item ">
                                 <a class="nav-link" href="{{ url('mandalay/cinema') }}">
                                     <i class="fa fa-film"></i>
                                     <span class="sidebar-normal">Cinema</span>
@@ -64,7 +64,7 @@
                         </ul>
                     </div>
                 </li>
-                <li class="nav-item ">
+                <li class="nav-item active">
                     <a class="nav-link" data-toggle="collapse" href="#naypyitaw">
                         <i class="material-icons">home</i>
                         <p> NayPyiTaw
@@ -80,7 +80,7 @@
                                 </a>
                             </li>
 
-                            <li class="nav-item ">
+                            <li class="nav-item active">
                                 <a class="nav-link" href="{{ url('naypyitaw/cinema') }}">
                                     <i class="fa fa-film"></i>
                                     <span class="sidebar-normal">Cinema</span>
@@ -124,8 +124,7 @@
                 <div class="navbar-wrapper">
                     <a class="navbar-brand" href="#pablo">Dashboard</a>
                 </div>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index"
-                        aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="navbar-toggler-icon icon-bar"></span>
                     <span class="navbar-toggler-icon icon-bar"></span>
@@ -134,8 +133,7 @@
                 <div class="collapse navbar-collapse justify-content-end">
                     <ul class="navbar-nav">
                         <li class="nav-item dropdown">
-                            <a class="nav-link" href="#pablo" id="navbarDropdownProfile" data-toggle="dropdown"
-                               aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link" href="#pablo" id="navbarDropdownProfile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="material-icons">person</i>
                                 <p class="d-lg-none d-md-block">
                                     Account
@@ -148,8 +146,7 @@
                                     {{ __('Logout') }}
                                 </a>
 
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                      style="display: none;">
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                     @csrf
                                 </form>
                             </div>
@@ -161,82 +158,65 @@
         <!-- End Navbar -->
         <div class="content">
             <div class="container-fluid">
-                @if (count($errors) > 0)
-                    <div class="alert alert-danger">
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-                @endif
-
-                @if(session('success'))
-                    <div class="alert alert-success">
-                        {{ session('success') }}
-                    </div>
-                @endif
+                <a href="{{ url('naypyitaw/cinema/create') }}" class="btn btn-success btn-round text-right">New</a>
                 <div class="row">
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header card-header-success">
-                                <h4 class="card-title">Create New Movie</h4>
+                                <h4 class="card-title ">Cinemas List</h4>
                             </div>
                             <div class="card-body">
-                                <form action="{{ url('movie/store') }}" method="POST" enctype="multipart/form-data">
-                                    {{ csrf_field() }}
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <label class="bmd-label-floating">Enter Movie Title</label>
-                                                <input type="text" name="title" class="form-control">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <label class="bmd-label-floating">Enter Movie Director</label>
-                                                <input type="text" name="director" class="form-control">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <label class="bmd-label-floating">Enter Movie Cast</label>
-                                                <input type="text" name="cast" class="form-control">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <label class="bmd-label-floating">Enter Date</label>
-                                                <input type="text" name="date" class="form-control datepicker">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <label class="bmd-label-floating">Enter Now or Coming</label>
-                                                <input type="text" name="status" class="form-control">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <label for="photo">Choose Photo</label>
-                                                <input type="file" class="form-control-file file-input" name="photo" id="photo">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <button type="submit" class="btn btn-success pull-left">Create</button>
-                                    <a href="{{ url('/dashboard') }}" class="btn btn-success pull-right">Back</a>
-                                    <div class="clearfix"></div>
-                                </form>
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead class=" text-success">
+                                        <th>
+                                            Name
+                                        </th>
+                                        <th>
+                                            Address
+                                        </th>
+                                        <th>
+                                            Phone
+                                        </th>
+                                        <th>
+                                            City
+                                        </th>
+                                        <th>
+                                            Action
+                                        </th>
+                                        </thead>
+                                        <tbody>
+                                        @foreach( $cinemas as $cinema)
+                                            <tr>
+                                                <td>
+                                                    {{ $cinema->name }}
+                                                </td>
+                                                <td>
+                                                    {{ $cinema->address }}
+                                                </td>
+                                                <td>
+                                                    {{ $cinema->phone }}
+                                                </td>
+                                                <td>
+                                                    {{ $cinema->city }}
+                                                </td>
+                                                <td class="td-actions">
+                                                    <a href="{{ url('/naypyitaw/cinema/edit/' . $cinema->id) }}" class="btn btn-success btn-round">
+                                                        <i class="material-icons">edit</i>
+                                                    </a>
+                                                    <form action="{{ url('/cinema/destroy/' . $cinema->id) }}" method="post">
+                                                        {{ csrf_field() }}
+                                                        {{ method_field('delete') }}
+                                                        <button class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this item?');">
+                                                            <i class="material-icons">delete</i>
+                                                        </button>
+                                                    </form>
+                                                </td>
+                                            </tr>
+                                        @endforeach
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>

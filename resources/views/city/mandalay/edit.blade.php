@@ -8,7 +8,7 @@
         </div>
         <div class="sidebar-wrapper">
             <ul class="nav">
-                <li class="nav-item active">
+                <li class="nav-item">
                     <a class="nav-link" href="{{ url('/dashboard') }}">
                         <i class="fa fa-film" aria-hidden="true"></i>
                         <p>Movies</p>
@@ -39,7 +39,7 @@
                         </ul>
                     </div>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item active">
                     <a class="nav-link" data-toggle="collapse" href="#mandalay">
                         <i class="material-icons">home</i>
                         <p> Mandalay
@@ -48,14 +48,14 @@
                     </a>
                     <div class="collapse" id="mandalay">
                         <ul class="nav">
-                            <li class="nav-item ">
+                            <li class="nav-item">
                                 <a class="nav-link" href="{{ url('mandalay/ticket') }}">
                                     <i class="fa fa-ticket"></i>
                                     <span class="sidebar-normal">Ticket</span>
                                 </a>
                             </li>
 
-                            <li class="nav-item">
+                            <li class="nav-item active">
                                 <a class="nav-link" href="{{ url('mandalay/cinema') }}">
                                     <i class="fa fa-film"></i>
                                     <span class="sidebar-normal">Cinema</span>
@@ -180,61 +180,48 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header card-header-success">
-                                <h4 class="card-title">Create New Movie</h4>
+                                <h4 class="card-title">Edit Cinema</h4>
                             </div>
                             <div class="card-body">
-                                <form action="{{ url('movie/store') }}" method="POST" enctype="multipart/form-data">
+                                <form action="{{ url('cinema/update') }}" method="POST" enctype="multipart/form-data">
                                     {{ csrf_field() }}
+                                    <input type="hidden" name="id" value="{{ $cinema->id }}">
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label class="bmd-label-floating">Enter Movie Title</label>
-                                                <input type="text" name="title" class="form-control">
+                                                <label class="bmd-label-floating">Enter Cinema Name</label>
+                                                <input type="text" name="name" value="{{ $cinema->name }}" class="form-control">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label class="bmd-label-floating">Enter Movie Director</label>
-                                                <input type="text" name="director" class="form-control">
+                                                <label class="bmd-label-floating">Enter Address</label>
+                                                <input type="text" name="address" value="{{ $cinema->address }}" class="form-control">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label class="bmd-label-floating">Enter Movie Cast</label>
-                                                <input type="text" name="cast" class="form-control">
+                                                <label class="bmd-label-floating">Enter Phone</label>
+                                                <input type="text" name="phone" value="{{ $cinema->phone }}" class="form-control">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label class="bmd-label-floating">Enter Date</label>
-                                                <input type="text" name="date" class="form-control datepicker">
+                                                <label class="bmd-label-floating">Enter Movie ID</label>
+                                                <input type="number" name="movieId" value="{{ $cinema->movieId }}" class="form-control">
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <label class="bmd-label-floating">Enter Now or Coming</label>
-                                                <input type="text" name="status" class="form-control">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <label for="photo">Choose Photo</label>
-                                                <input type="file" class="form-control-file file-input" name="photo" id="photo">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <button type="submit" class="btn btn-success pull-left">Create</button>
-                                    <a href="{{ url('/dashboard') }}" class="btn btn-success pull-right">Back</a>
+                                    <input type="hidden" name="photo" value="{{ $cinema->photo }}">
+                                    <input type="text" name="city" value="{{ $cinema->city }}" class="form-control">
+                                    <button type="submit" class="btn btn-success pull-left">Update</button>
+                                    <a href="{{ url('mandalay/cinema') }}" class="btn btn-success pull-right">Back</a>
                                     <div class="clearfix"></div>
                                 </form>
                             </div>

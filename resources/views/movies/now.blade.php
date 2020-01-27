@@ -36,16 +36,16 @@
                             <i class="material-icons">local_movies</i> Cinemas
                         </a>
                         <div class="dropdown-menu dropdown-with-icons">
-                            <a href="{{ url('city/yangon') }}" class="dropdown-item">
+                            <a href="{{ url('cinemas/yangon') }}" class="dropdown-item">
                                 <i class="material-icons">location_city</i> Yangon
                             </a>
-                            <a href="{{ url('city/mandalay') }}" class="dropdown-item">
+                            <a href="{{ url('cinemas/mandalay') }}" class="dropdown-item">
                                 <i class="material-icons">location_city</i> Mandalay
                             </a>
-                            <a href="{{ url('city/naypyitaw') }}" class="dropdown-item">
+                            <a href="{{ url('cinemas/naypyitaw') }}" class="dropdown-item">
                                 <i class="material-icons">location_city</i> Nay Pyi Taw
                             </a>
-                            <a href="{{ url('city/pakokku') }}" class="dropdown-item">
+                            <a href="{{ url('cinemas/pakokku') }}" class="dropdown-item">
                                 <i class="material-icons">location_city</i> Pakokku
                             </a>
                         </div>

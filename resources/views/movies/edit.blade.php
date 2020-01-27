@@ -14,24 +14,24 @@
                         <p>Movies</p>
                     </a>
                 </li>
-                <li class="nav-item ">
-                    <a class="nav-link" data-toggle="collapse" href="#pagesExamples">
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="collapse" href="#yangon">
                         <i class="material-icons">home</i>
                         <p> Yangon
                             <b class="caret"></b>
                         </p>
                     </a>
-                    <div class="collapse" id="pagesExamples">
+                    <div class="collapse" id="yangon">
                         <ul class="nav">
-                            <li class="nav-item ">
-                                <a class="nav-link" href="../examples/pages/pricing.html">
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url('yangon/ticket') }}">
                                     <i class="fa fa-ticket"></i>
                                     <span class="sidebar-normal">Ticket</span>
                                 </a>
                             </li>
 
-                            <li class="nav-item ">
-                                <a class="nav-link" href="../examples/pages/pricing.html">
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url('yangon/cinema') }}">
                                     <i class="fa fa-film"></i>
                                     <span class="sidebar-normal">Cinema</span>
                                 </a>
@@ -39,24 +39,24 @@
                         </ul>
                     </div>
                 </li>
-                <li class="nav-item ">
-                    <a class="nav-link" data-toggle="collapse" href="#pagesExamples">
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="collapse" href="#mandalay">
                         <i class="material-icons">home</i>
                         <p> Mandalay
                             <b class="caret"></b>
                         </p>
                     </a>
-                    <div class="collapse" id="pagesExamples">
+                    <div class="collapse" id="mandalay">
                         <ul class="nav">
                             <li class="nav-item ">
-                                <a class="nav-link" href="../examples/pages/pricing.html">
+                                <a class="nav-link" href="{{ url('mandalay/ticket') }}">
                                     <i class="fa fa-ticket"></i>
                                     <span class="sidebar-normal">Ticket</span>
                                 </a>
                             </li>
 
-                            <li class="nav-item ">
-                                <a class="nav-link" href="../examples/pages/pricing.html">
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url('mandalay/cinema') }}">
                                     <i class="fa fa-film"></i>
                                     <span class="sidebar-normal">Cinema</span>
                                 </a>
@@ -65,23 +65,23 @@
                     </div>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link" data-toggle="collapse" href="#pagesExamples">
+                    <a class="nav-link" data-toggle="collapse" href="#naypyitaw">
                         <i class="material-icons">home</i>
                         <p> NayPyiTaw
                             <b class="caret"></b>
                         </p>
                     </a>
-                    <div class="collapse" id="pagesExamples">
+                    <div class="collapse" id="naypyitaw">
                         <ul class="nav">
                             <li class="nav-item ">
-                                <a class="nav-link" href="../examples/pages/pricing.html">
+                                <a class="nav-link" href="{{ url('naypyitaw/ticket') }}">
                                     <i class="fa fa-ticket"></i>
                                     <span class="sidebar-normal">Ticket</span>
                                 </a>
                             </li>
 
                             <li class="nav-item ">
-                                <a class="nav-link" href="../examples/pages/pricing.html">
+                                <a class="nav-link" href="{{ url('naypyitaw/cinema') }}">
                                     <i class="fa fa-film"></i>
                                     <span class="sidebar-normal">Cinema</span>
                                 </a>
@@ -90,23 +90,23 @@
                     </div>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link" data-toggle="collapse" href="#pagesExamples">
+                    <a class="nav-link" data-toggle="collapse" href="#pakokku">
                         <i class="material-icons">home</i>
                         <p> Pakokku
                             <b class="caret"></b>
                         </p>
                     </a>
-                    <div class="collapse" id="pagesExamples">
+                    <div class="collapse" id="pakokku">
                         <ul class="nav">
                             <li class="nav-item ">
-                                <a class="nav-link" href="../examples/pages/pricing.html">
+                                <a class="nav-link" href="{{ url('pakokku/ticket') }}">
                                     <i class="fa fa-ticket"></i>
                                     <span class="sidebar-normal">Ticket</span>
                                 </a>
                             </li>
 
                             <li class="nav-item ">
-                                <a class="nav-link" href="../examples/pages/pricing.html">
+                                <a class="nav-link" href="{{ url('pakokku/cinema') }}">
                                     <i class="fa fa-film"></i>
                                     <span class="sidebar-normal">Cinema</span>
                                 </a>
@@ -227,7 +227,8 @@
                                         </div>
                                     </div>
                                     <input type="hidden" name="photo" value="{{ $movie->photo }}">
-                                    <button type="submit" class="btn btn-success pull-right">Update</button>
+                                    <button type="submit" class="btn btn-success pull-left">Update</button>
+                                    <a href="{{ url('/dashboard') }}" class="btn btn-success pull-right">Back</a>
                                     <div class="clearfix"></div>
                                 </form>
                             </div>

@@ -6,116 +6,116 @@
         MM-Cinema
       </a>
     </div>
-    <div class="sidebar-wrapper">
-      <ul class="nav">
-        <li class="nav-item active">
-          <a class="nav-link" href="{{ url('/dashboard') }}">
-            <i class="fa fa-film" aria-hidden="true"></i>
-            <p>Movies</p>
-          </a>
-        </li>
-        <li class="nav-item ">
-          <a class="nav-link" data-toggle="collapse" href="#pagesExamples">
-            <i class="material-icons">home</i>
-            <p> Yangon
-              <b class="caret"></b>
-            </p>
-          </a>
-          <div class="collapse" id="pagesExamples">
-            <ul class="nav">
-              <li class="nav-item ">
-                <a class="nav-link" href="{{ url('yangon/ticket') }}">
-                  <i class="fa fa-ticket"></i>
-                  <span class="sidebar-normal">Ticket</span>
-                </a>
+      <div class="sidebar-wrapper">
+          <ul class="nav">
+              <li class="nav-item active">
+                  <a class="nav-link" href="{{ url('/dashboard') }}">
+                      <i class="fa fa-film" aria-hidden="true"></i>
+                      <p>Movies</p>
+                  </a>
               </li>
+              <li class="nav-item">
+                  <a class="nav-link" data-toggle="collapse" href="#yangon">
+                      <i class="material-icons">home</i>
+                      <p> Yangon
+                          <b class="caret"></b>
+                      </p>
+                  </a>
+                  <div class="collapse" id="yangon">
+                      <ul class="nav">
+                          <li class="nav-item">
+                              <a class="nav-link" href="{{ url('yangon/ticket') }}">
+                                  <i class="fa fa-ticket"></i>
+                                  <span class="sidebar-normal">Ticket</span>
+                              </a>
+                          </li>
 
-                <li class="nav-item ">
-                    <a class="nav-link" href="{{ url('yangon/cinema') }}">
-                        <i class="fa fa-film"></i>
-                        <span class="sidebar-normal">Cinema</span>
-                    </a>
-                </li>
-            </ul>
-          </div>
-        </li>
-        <li class="nav-item ">
-          <a class="nav-link" data-toggle="collapse" href="#pagesExamples">
-            <i class="material-icons">home</i>
-            <p> Mandalay
-              <b class="caret"></b>
-            </p>
-          </a>
-          <div class="collapse" id="pagesExamples">
-            <ul class="nav">
-              <li class="nav-item ">
-                <a class="nav-link" href="{{ url('mandalay/ticket') }}">
-                  <i class="fa fa-ticket"></i>
-                  <span class="sidebar-normal">Ticket</span>
-                </a>
+                          <li class="nav-item">
+                              <a class="nav-link" href="{{ url('yangon/cinema') }}">
+                                  <i class="fa fa-film"></i>
+                                  <span class="sidebar-normal">Cinema</span>
+                              </a>
+                          </li>
+                      </ul>
+                  </div>
               </li>
+              <li class="nav-item">
+                  <a class="nav-link" data-toggle="collapse" href="#mandalay">
+                      <i class="material-icons">home</i>
+                      <p> Mandalay
+                          <b class="caret"></b>
+                      </p>
+                  </a>
+                  <div class="collapse" id="mandalay">
+                      <ul class="nav">
+                          <li class="nav-item ">
+                              <a class="nav-link" href="{{ url('mandalay/ticket') }}">
+                                  <i class="fa fa-ticket"></i>
+                                  <span class="sidebar-normal">Ticket</span>
+                              </a>
+                          </li>
 
-              <li class="nav-item ">
-                <a class="nav-link" href="{{ url('mandalay/cinema') }}">
-                  <i class="fa fa-film"></i>
-                  <span class="sidebar-normal">Cinema</span>
-                </a>
+                          <li class="nav-item">
+                              <a class="nav-link" href="{{ url('mandalay/cinema') }}">
+                                  <i class="fa fa-film"></i>
+                                  <span class="sidebar-normal">Cinema</span>
+                              </a>
+                          </li>
+                      </ul>
+                  </div>
               </li>
-            </ul>
-          </div>
-        </li>
-        <li class="nav-item ">
-          <a class="nav-link" data-toggle="collapse" href="#pagesExamples">
-            <i class="material-icons">home</i>
-            <p> NayPyiTaw
-              <b class="caret"></b>
-            </p>
-          </a>
-          <div class="collapse" id="pagesExamples">
-            <ul class="nav">
               <li class="nav-item ">
-                <a class="nav-link" href="{{ url('naypyitaw/ticket') }}">
-                  <i class="fa fa-ticket"></i>
-                  <span class="sidebar-normal">Ticket</span>
-                </a>
-              </li>
+                  <a class="nav-link" data-toggle="collapse" href="#naypyitaw">
+                      <i class="material-icons">home</i>
+                      <p> NayPyiTaw
+                          <b class="caret"></b>
+                      </p>
+                  </a>
+                  <div class="collapse" id="naypyitaw">
+                      <ul class="nav">
+                          <li class="nav-item ">
+                              <a class="nav-link" href="{{ url('naypyitaw/ticket') }}">
+                                  <i class="fa fa-ticket"></i>
+                                  <span class="sidebar-normal">Ticket</span>
+                              </a>
+                          </li>
 
-              <li class="nav-item ">
-                <a class="nav-link" href="{{ url('naypyitaw/cinema') }}">
-                  <i class="fa fa-film"></i>
-                  <span class="sidebar-normal">Cinema</span>
-                </a>
+                          <li class="nav-item ">
+                              <a class="nav-link" href="{{ url('naypyitaw/cinema') }}">
+                                  <i class="fa fa-film"></i>
+                                  <span class="sidebar-normal">Cinema</span>
+                              </a>
+                          </li>
+                      </ul>
+                  </div>
               </li>
-            </ul>
-          </div>
-        </li>
-        <li class="nav-item ">
-          <a class="nav-link" data-toggle="collapse" href="#pagesExamples">
-            <i class="material-icons">home</i>
-            <p> Pakokku
-              <b class="caret"></b>
-            </p>
-          </a>
-          <div class="collapse" id="pagesExamples">
-            <ul class="nav">
               <li class="nav-item ">
-                <a class="nav-link" href="{{ url('pakokku/ticket') }}">
-                  <i class="fa fa-ticket"></i>
-                  <span class="sidebar-normal">Ticket</span>
-                </a>
-              </li>
+                  <a class="nav-link" data-toggle="collapse" href="#pakokku">
+                      <i class="material-icons">home</i>
+                      <p> Pakokku
+                          <b class="caret"></b>
+                      </p>
+                  </a>
+                  <div class="collapse" id="pakokku">
+                      <ul class="nav">
+                          <li class="nav-item ">
+                              <a class="nav-link" href="{{ url('pakokku/ticket') }}">
+                                  <i class="fa fa-ticket"></i>
+                                  <span class="sidebar-normal">Ticket</span>
+                              </a>
+                          </li>
 
-              <li class="nav-item ">
-                <a class="nav-link" href="{{ url('pakokku/cinema') }}">
-                  <i class="fa fa-film"></i>
-                  <span class="sidebar-normal">Cinema</span>
-                </a>
+                          <li class="nav-item ">
+                              <a class="nav-link" href="{{ url('pakokku/cinema') }}">
+                                  <i class="fa fa-film"></i>
+                                  <span class="sidebar-normal">Cinema</span>
+                              </a>
+                          </li>
+                      </ul>
+                  </div>
               </li>
-            </ul>
-          </div>
-        </li>
-      </ul>
-    </div>
+          </ul>
+      </div>
   </div>
   <div class="main-panel">
     <!-- Navbar -->
@@ -186,7 +186,7 @@
                     </th>
                     </thead>
                     <tbody>
-                    @foreach( $movies as $movie)
+                    @foreach( $nows as $movie)
                         <tr>
                             <td>
                                 {{ $movie->title }}
@@ -249,7 +249,34 @@
                     </th>
                     </thead>
                     <tbody>
-
+                    @foreach( $nows as $movie)
+                        <tr>
+                            <td>
+                                {{ $movie->title }}
+                            </td>
+                            <td>
+                                {{ $movie->director }}
+                            </td>
+                            <td>
+                                {{ $movie->cast }}
+                            </td>
+                            <td>
+                                {{ $movie->date }}
+                            </td>
+                            <td class="td-actions">
+                                <a href="{{ url('/movie/edit/' . $movie->id) }}" class="btn btn-success btn-round">
+                                    <i class="material-icons">edit</i>
+                                </a>
+                                <form action="{{ url('/movie/destroy/' . $movie->id) }}" method="post">
+                                    {{ csrf_field() }}
+                                    {{ method_field('delete') }}
+                                    <button class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this item?');">
+                                        <i class="material-icons">delete</i>
+                                    </button>
+                                </form>
+                            </td>
+                        </tr>
+                    @endforeach
                     </tbody>
                   </table>
                 </div>

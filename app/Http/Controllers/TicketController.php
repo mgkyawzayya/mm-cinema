@@ -4,12 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Ticket;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class TicketController extends Controller
 {
-    public function index()
+    public function index($city)
     {
-        return view('tickets.index');
+        $ticket = DB::table('tickets')->where('city', $city)->get();
+        return view('city.' . $city. '.ticket', ['tickets' => $ticket]);
     }
 
     public function store(Request $request)
@@ -20,7 +22,9 @@ class TicketController extends Controller
             'seat' => 'required',
             'time' => 'required',
             'price' => 'required',
-            'date' => 'required'
+            'date' => 'required',
+            'cinema' => 'required',
+            'city' => 'required',
         ]);
 
         $ticket = new Ticket();
@@ -30,6 +34,8 @@ class TicketController extends Controller
         $ticket->time = $request->date;
         $ticket->price = $request->price * $request->seat;
         $ticket->date = $request->date;
+        $ticket->cinema = $request->cinema;
+        $ticket->city = $request->city;
         $ticket->save();
 
         return back()->with('success', 'You Booked successfully.');

@@ -18,8 +18,9 @@ class CreateCinemasTable extends Migration
             $table->text('name');
             $table->text('address');
             $table->text('phone');
+            $table->text('photo');
             $table->text('city');
-            $table->integer('movie_id');
+            $table->integer('movieId');
             $table->timestamps();
         });
     }

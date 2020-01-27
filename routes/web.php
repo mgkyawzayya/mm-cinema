@@ -4,8 +4,17 @@
 Route::get('/', 'MovieController@index');
 Route::get('/now', 'MovieController@now');
 Route::get('/now/{id}', 'MovieController@show');
-
 Route::get('/coming', 'MovieController@coming');
+Route::get('/coming/{id}', 'MovieController@coming');
+
+Route::get('/cinemas/{name}', 'CinemaController@index');
+Route::get('/cinemas/{name}/cinema/show/{id}', 'CinemaController@show');
+
+Route::get('{city}/cinema/edit/{id}', 'CinemaController@edit');
+Route::post('/cinema/update', 'CinemaController@update');
+
+Route::get('{city}/cinema/create', 'CinemaController@create');
+Route::post('/cinema/store', 'CinemaController@store');
 
 Route::get('/movie/create', 'MovieController@create');
 Route::post('/movie/store', 'MovieController@store');
@@ -14,11 +23,6 @@ Route::post('/movie/update', 'MovieController@update');
 
 
 Route::post('/ticket/store', 'TicketController@store');
-
-
-Route::get('/city/{name}', 'CinemaController@index');
-Route::get('/city/{name}/cinema/show/{id}', 'CinemaController@show');
-
 Route::get('/{city}/ticket', 'TicketController@index');
 Route::get('/{city}/cinema', 'CinemaController@cinema');
 

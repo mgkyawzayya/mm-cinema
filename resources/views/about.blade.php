@@ -35,20 +35,20 @@
             <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
               <i class="material-icons">local_movies</i> Cinemas
             </a>
-            <div class="dropdown-menu dropdown-with-icons">
-              <a href="{{ url('city/yangon') }}" class="dropdown-item">
-                <i class="material-icons">location_city</i> Yangon
-              </a>
-              <a href="{{ url('city/mandalay') }}" class="dropdown-item">
-                <i class="material-icons">location_city</i> Mandalay
-              </a>
-              <a href="{{ url('city/naypyitaw') }}" class="dropdown-item">
-                <i class="material-icons">location_city</i> Nay Pyi Taw
-              </a>
-              <a href="{{ url('city/pakokku') }}" class="dropdown-item">
-                <i class="material-icons">location_city</i> Pakokku
-              </a>
-            </div>
+              <div class="dropdown-menu dropdown-with-icons">
+                  <a href="{{ url('cinema/yangon') }}" class="dropdown-item">
+                      <i class="material-icons">location_city</i> Yangon
+                  </a>
+                  <a href="{{ url('cinema/mandalay') }}" class="dropdown-item">
+                      <i class="material-icons">location_city</i> Mandalay
+                  </a>
+                  <a href="{{ url('cinema/naypyitaw') }}" class="dropdown-item">
+                      <i class="material-icons">location_city</i> Nay Pyi Taw
+                  </a>
+                  <a href="{{ url('cinema/pakokku') }}" class="dropdown-item">
+                      <i class="material-icons">location_city</i> Pakokku
+                  </a>
+              </div>
           </li>
         </ul>
       </div>
