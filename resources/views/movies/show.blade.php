@@ -72,7 +72,7 @@
             <div class="row">
               <div class="col-md-4">
                 <div class="card-header card-header-image">
-                  <a href="#pablito">
+                  <a href="#">
                     <img class="img" src="{{ asset('images/movies/'. $movie->photo) }}">
                   </a>
                   <div class="colored-shadow" style="opacity: 1;"></div></div>

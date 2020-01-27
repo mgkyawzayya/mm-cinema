@@ -69,90 +69,42 @@
             <div class="movie-title text-center">
                 <h2 class="title">Now Showing Movies</h2>
                 <div class="row">
-                    <div class="col-md-4">
-                        <div class="card card-profile card-plain">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="card-header card-header-image">
-                                        <a href="#pablo">
-                                            <img class="img" src="{{ url('images/movie-1.jpg') }}">
-                                        </a>
+                    @foreach( $nows as $now)
+                        <div class="col-md-4">
+                            <div class="card card-profile card-plain">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="card-header card-header-image">
+                                            <a href="{{ url('movie/show/'. $now->id) }}">
+                                                <img class="img" src="{{ asset('/images/movies/'. $now->photo) }}">
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card card-profile card-plain">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="card-header card-header-image">
-                                        <a href="#pablo">
-                                            <img class="img" src="images/movie-1.jpg">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card card-profile card-plain">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="card-header card-header-image">
-                                        <a href="#pablo">
-                                            <img class="img" src="images/movie-1.jpg">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
 
             <div class="movie-title text-center">
                 <h2 class="title">New Upcoming Movies</h2>
                 <div class="row">
-                    <div class="col-md-4">
-                        <div class="card card-profile card-plain">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="card-header card-header-image">
-                                        <a href="#pablo">
-                                            <img class="img" src="{{ url('images/movie-1.jpg') }}">
-                                        </a>
+                    @foreach($comings as $coming)
+                        <div class="col-md-4">
+                            <div class="card card-profile card-plain">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="card-header card-header-image">
+                                            <a href="{{ url('movie/show/'. $coming->id) }}">
+                                                <img class="img" src="{{ asset('/images/movies/'. $coming->photo) }}">
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card card-profile card-plain">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="card-header card-header-image">
-                                        <a href="#pablo">
-                                            <img class="img" src="images/movie-1.jpg">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card card-profile card-plain">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="card-header card-header-image">
-                                        <a href="#pablo">
-                                            <img class="img" src="images/movie-1.jpg">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>

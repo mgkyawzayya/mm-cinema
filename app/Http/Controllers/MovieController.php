@@ -15,7 +15,9 @@ class MovieController extends Controller
 
     public function index()
     {
-        return view('movies.index');
+        $now = DB::table('movies')->where('status', 'now')->get();
+        $coming = DB::table('movies')->where('status', 'coming')->get();
+        return view('movies.index', [ 'nows' => $now, 'comings' => $coming ]);
     }
 
     public function create()

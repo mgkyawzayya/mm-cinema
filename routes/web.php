@@ -1,5 +1,6 @@
 <?php
 
+Auth::routes();
 
 Route::get('/', 'MovieController@index');
 Route::get('/now', 'MovieController@now');
@@ -19,6 +20,7 @@ Route::get('{city}/cinema/edit/{id}', 'CinemaController@edit');
 Route::delete('{city}/cinema/destroy/{id}', 'CinemaController@destroy');
 
 Route::get('/movie/create', 'MovieController@create');
+Route::get('/movie/show', 'MovieController@show');
 Route::post('/movie/store', 'MovieController@store');
 Route::get('/movie/edit/{id}', 'MovieController@edit');
 Route::post('/movie/update', 'MovieController@update');
@@ -42,6 +44,4 @@ Route::get('qr', function () {
   return view('welcome');
 
 });
-Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
