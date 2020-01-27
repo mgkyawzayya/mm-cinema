@@ -4,7 +4,7 @@
          color-on-scroll="100">
         <div class="container">
             <div class="navbar-translate">
-                <a class="navbar-brand" href="l">
+                <a class="navbar-brand" href="/">
                     MM-Cinema </a>
                 <button class="navbar-toggler" data-toggle="collapse" type="button" aria-expanded="false"
                         aria-label="Toggle navigation">
@@ -36,16 +36,16 @@
                             <i class="material-icons">local_movies</i> Cinemas
                         </a>
                         <div class="dropdown-menu dropdown-with-icons">
-                            <a href="{{ url('cinema/yangon') }}" class="dropdown-item">
+                            <a href="{{ url('cinemas/yangon') }}" class="dropdown-item">
                                 <i class="material-icons">location_city</i> Yangon
                             </a>
-                            <a href="{{ url('cinema/mandalay') }}" class="dropdown-item">
+                            <a href="{{ url('cinemas/mandalay') }}" class="dropdown-item">
                                 <i class="material-icons">location_city</i> Mandalay
                             </a>
-                            <a href="{{ url('cinema/naypyitaw') }}" class="dropdown-item">
+                            <a href="{{ url('cinemas/naypyitaw') }}" class="dropdown-item">
                                 <i class="material-icons">location_city</i> Nay Pyi Taw
                             </a>
-                            <a href="{{ url('cinema/pakokku') }}" class="dropdown-item">
+                            <a href="{{ url('cinemas/pakokku') }}" class="dropdown-item">
                                 <i class="material-icons">location_city</i> Pakokku
                             </a>
                         </div>
@@ -68,7 +68,7 @@
         <div class="container">
             @foreach($cinemas as $cinema)
                 <div class="row">
-                    <a class="col-md-12 card" href="{{ url('cinemas/yangon/cinema/show'. $cinema->id) }}">
+                    <a class="col-md-12 card" href="{{ url('cinemas/'. $cinema->city .'/cinema/show'. $cinema->id) }}">
                         <div class="card card-plain card-blog">
 
                             <div class="row">
@@ -82,7 +82,7 @@
                                 </div>
                                 <div class="col-md-8">
                                     <h3 class="card-title text-center">
-                                        <a href="{{ url('cinemas/yangon/cinema/show'. $cinema->id) }}">{{ $cinema->name }}</a>
+                                        <a href="{{ url('cinemas/'. $cinema->city .'/cinema/show'. $cinema->id) }}">{{ $cinema->name }}</a>
                                     </h3>
                                     <h4 class="card-title">
                                         Address - {{ $cinema->address }}
@@ -90,7 +90,7 @@
                                     <h4 class="card-title">
                                         Phone - {{ $cinema->phone }}
                                     </h4>
-                                    <a href="{{ url('cinemas/yangon/cinema/show'. $cinema->id) }}" class="btn btn-info">Details</a>
+                                    <a href="{{ url('cinemas/'. $cinema->city .'/cinema/show'. $cinema->id) }}" class="btn btn-info">Details</a>
                                 </div>
                             </div>
                         </div>

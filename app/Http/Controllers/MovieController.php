@@ -8,6 +8,11 @@ use Illuminate\Support\Facades\DB;
 
 class MovieController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth')->except(['index', 'show', 'now', 'coming']);
+    }
+
     public function index()
     {
         return view('movies.index');
@@ -99,5 +104,11 @@ class MovieController extends Controller
     {
         $movie = DB::table('movies')->where('status', 'coming')->get();
         return view('movies.coming',[ "movies" => $movie ]);
+    }
+
+    public function destroy($id)
+    {
+        DB::table('movies')->where('id', $id)->delete();
+        return redirect('/dashboard');
     }
 }

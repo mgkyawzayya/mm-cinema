@@ -4,7 +4,7 @@
          color-on-scroll="100">
         <div class="container">
             <div class="navbar-translate">
-                <a class="navbar-brand" href="l">
+                <a class="navbar-brand" href="/">
                     MM-Cinema </a>
                 <button class="navbar-toggler" data-toggle="collapse" type="button" aria-expanded="false"
                         aria-label="Toggle navigation">

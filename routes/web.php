@@ -10,21 +10,22 @@ Route::get('/coming/{id}', 'MovieController@coming');
 Route::get('/cinemas/{name}', 'CinemaController@index');
 Route::get('/cinemas/{name}/cinema/show/{id}', 'CinemaController@show');
 
-Route::get('{city}/cinema/edit/{id}', 'CinemaController@edit');
 Route::post('/cinema/update', 'CinemaController@update');
 
-Route::get('{city}/cinema/create', 'CinemaController@create');
+Route::get('/{city}/cinema', 'CinemaController@cinema');
 Route::post('/cinema/store', 'CinemaController@store');
+Route::get('{city}/cinema/create', 'CinemaController@create');
+Route::get('{city}/cinema/edit/{id}', 'CinemaController@edit');
+Route::delete('{city}/cinema/destroy/{id}', 'CinemaController@destroy');
 
 Route::get('/movie/create', 'MovieController@create');
 Route::post('/movie/store', 'MovieController@store');
 Route::get('/movie/edit/{id}', 'MovieController@edit');
 Route::post('/movie/update', 'MovieController@update');
-
+Route::delete('/movie/destroy/{id}', 'MovieController@destroy');
 
 Route::post('/ticket/store', 'TicketController@store');
 Route::get('/{city}/ticket', 'TicketController@index');
-Route::get('/{city}/cinema', 'CinemaController@cinema');
 
 Route::get('/about', function () {
   return view('about');

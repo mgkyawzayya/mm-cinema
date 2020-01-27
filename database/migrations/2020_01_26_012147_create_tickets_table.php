@@ -21,7 +21,7 @@ class CreateTicketsTable extends Migration
             $table->text('time');
             $table->text('price');
             $table->text('date');
-            $table->integer('cinema');
+            $table->text('cinema');
             $table->text('city');
             $table->timestamps();
         });

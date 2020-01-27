@@ -204,7 +204,7 @@
                                                     <a href="{{ url('/pakokku/cinema/edit/' . $cinema->id) }}" class="btn btn-success btn-round">
                                                         <i class="material-icons">edit</i>
                                                     </a>
-                                                    <form action="{{ url('/cinema/destroy/' . $cinema->id) }}" method="post">
+                                                    <form action="{{ url('/pakokku/cinema/destroy/' . $cinema->id) }}" method="post">
                                                         {{ csrf_field() }}
                                                         {{ method_field('delete') }}
                                                         <button class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this item?');">

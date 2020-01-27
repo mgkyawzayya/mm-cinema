@@ -4,7 +4,7 @@
        color-on-scroll="100">
     <div class="container">
       <div class="navbar-translate">
-        <a class="navbar-brand" href="l">
+        <a class="navbar-brand" href="/">
           MM-Cinema </a>
         <button class="navbar-toggler" data-toggle="collapse" type="button" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -75,7 +75,7 @@
                   <a href="">
                     <img class="img" src="../../images/movie-1.jpg">
                   </a>
-                  <div class="colored-shadow" style="background-image: url(&quot;./assets/img/examples/card-blog4.jpg&quot;); opacity: 1;"></div></div>
+                  <div class="colored-shadow" style="opacity: 1;"></div></div>
               </div>
               <div class="col-md-8">
                 <h2 class="card-title">
@@ -154,7 +154,7 @@
                         <i class="material-icons">phone</i>
                       </span>
                     </div>
-                    <input type="number" name="phone" class="form-control" placeholder="Enter Phone No">
+                    <input type="text" name="phone" class="form-control" placeholder="Enter Phone No">
                   </div>
                 </div>
 
@@ -208,7 +208,9 @@
                     <input type="date" name="date" class="form-control datepicker" placeholder="Date">
                   </div>
                 </div>
-                  <button type="submit" class="btn btn-success btn-round text-center">Confirm</button>
+                  <input type="hidden" value="{{ $cinema->name }}" name="cinema">
+                  <input type="hidden" value="{{ $cinema->city }}" name="city">
+                  <button type="submit" class="btn btn-success btn-round text-center pull-right">Confirm</button>
               </div>
             </form>
           </div>

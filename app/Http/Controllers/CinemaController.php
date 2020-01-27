@@ -8,15 +8,22 @@ use Illuminate\Support\Facades\DB;
 
 class CinemaController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth')->except(['index', 'show']);
+    }
+
     public function index($city)
     {
         $cinema = DB::table('cinemas')->where('city', $city)->get();
         return view('cinemas.index', ['cinemas' => $cinema]);
     }
 
-    public function show($name, $id)
+    public function show($city, $id)
     {
-        return view('cinemas.show');
+        $cinema = DB::table('cinemas')->where('id', $id)->get();
+
+        return view('cinemas.show', [ 'cinema' => $cinema ]);
     }
 
     public function create($city)
@@ -90,5 +97,11 @@ class CinemaController extends Controller
     {
         $cinema = DB::table('cinemas')->where('city', $city)->get();
         return view('city.' . $city . '.index', ['cinemas' => $cinema]);
+    }
+
+    public function destroy($city, $id)
+    {
+        DB::table('cinemas')->where('id', $id)->delete();
+        return redirect($city . '/cinema');
     }
 }
