@@ -51,4 +51,11 @@ class TicketController extends Controller
 
         return back()->with('success', 'You Booked successfully.');
     }
+
+
+    public function destroy($city, $id)
+    {
+        DB::table('tickets')->where('id', $id)->delete();
+        return redirect($city . '/ticket');
+    }
 }
