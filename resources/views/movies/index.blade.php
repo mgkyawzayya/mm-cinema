@@ -75,7 +75,7 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="card-header card-header-image">
-                                            <a href="{{ url('movie/show/'. $now->id) }}">
+                                            <a href="{{ url('coming/'. $now->id) }}">
                                                 <img class="img" src="{{ asset('/images/movies/'. $now->photo) }}">
                                             </a>
                                         </div>
@@ -96,7 +96,7 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="card-header card-header-image">
-                                            <a href="{{ url('movie/show/'. $coming->id) }}">
+                                            <a href="{{ url('coming/'. $coming->id) }}">
                                                 <img class="img" src="{{ asset('/images/movies/'. $coming->photo) }}">
                                             </a>
                                         </div>

@@ -170,6 +170,9 @@
                   <table class="table">
                     <thead class=" text-success">
                     <th>
+                        ID
+                    </th>
+                    <th>
                       Title
                     </th>
                     <th>
@@ -188,6 +191,9 @@
                     <tbody>
                     @foreach( $nows as $movie)
                         <tr>
+                            <td>
+                                {{ $movie->id }}
+                            </td>
                             <td>
                                 {{ $movie->title }}
                             </td>
@@ -233,6 +239,9 @@
                   <table class="table">
                     <thead class=" text-success">
                     <th>
+                        ID
+                    </th>
+                    <th>
                       Title
                     </th>
                     <th>
@@ -251,6 +260,9 @@
                     <tbody>
                     @foreach( $comings as $movie)
                         <tr>
+                            <td>
+                                {{ $movie->id }}
+                            </td>
                             <td>
                                 {{ $movie->title }}
                             </td>
