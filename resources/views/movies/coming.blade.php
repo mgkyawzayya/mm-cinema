@@ -73,7 +73,7 @@
                             <div class="card card-profile card-plain">
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <div class="card-header card-header-image">
+                                        <div class="card-header img-responsive card-header-image">
                                             <a href="{{ url('coming/'. $movie->id) }}">
                                                 <img class="img" src="{{ asset('images/movies/'. $movie->photo) }}">
                                             </a>
