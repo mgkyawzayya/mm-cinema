@@ -220,7 +220,7 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label class="bmd-label-floating">Enter Now or Coming</label>
+                                                <label class="bmd-label-floating">Enter now or coming</label>
                                                 <input type="text" name="status" class="form-control">
                                             </div>
                                         </div>
