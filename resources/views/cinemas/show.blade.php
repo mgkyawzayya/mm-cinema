@@ -16,7 +16,7 @@
       </div>
       <div class="collapse navbar-collapse">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
+          <li class="nav-item">
             <a class="nav-link" href="{{ url('/') }}">
               <i class="material-icons">home</i> Home
             </a>
@@ -31,7 +31,7 @@
               <i class="material-icons">movie</i> Coming
             </a>
           </li>
-          <li class="dropdown nav-item">
+          <li class="dropdown nav-item active">
             <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
               <i class="material-icons">local_movies</i> Cinemas
             </a>

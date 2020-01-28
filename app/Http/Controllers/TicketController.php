@@ -36,13 +36,13 @@ class TicketController extends Controller
             'city' => 'required',
         ]);
 
-        $price = 
+        $price =
 
         $ticket = new Ticket();
         $ticket->name = $request->name;
         $ticket->phone = $request->phone;
         $ticket->seat = $request->seat;
-        $ticket->time = $request->date;
+        $ticket->time = $request->time;
         $ticket->price = $request->price * $request->seat;
         $ticket->date = $request->date;
         $ticket->cinema = $request->cinema;
