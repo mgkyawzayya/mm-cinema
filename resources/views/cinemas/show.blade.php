@@ -79,7 +79,7 @@
               </div>
               <div class="col-md-8">
                 <h2 class="card-title">
-                  Title - {{ $movie->title}}
+                   {{ $movie->title}}
                 </h2>
                 <h4 class="card-title">
                   Directed By - {{ $movie->director }}
