@@ -6,7 +6,7 @@ Route::get('/', 'MovieController@index');
 Route::get('/now', 'MovieController@now');
 Route::get('/now/{id}', 'MovieController@show');
 Route::get('/coming', 'MovieController@coming');
-Route::get('/coming/{id}', 'MovieController@coming');
+Route::get('/coming/{id}', 'MovieController@show');
 
 Route::get('/cinemas/{name}', 'CinemaController@index');
 Route::get('/cinemas/{name}/cinema/show/{id}', 'CinemaController@show');
@@ -26,6 +26,8 @@ Route::get('/movie/edit/{id}', 'MovieController@edit');
 Route::post('/movie/update', 'MovieController@update');
 Route::delete('/movie/destroy/{id}', 'MovieController@destroy');
 
+Route::post('/ticket/store', 'TicketController@store');
+Route::get('/ticket/edit/{id}', 'TicketController@edit');
 Route::post('/ticket/store', 'TicketController@store');
 Route::get('/{city}/ticket', 'TicketController@index');
 

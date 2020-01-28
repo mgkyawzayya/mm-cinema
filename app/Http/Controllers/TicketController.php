@@ -14,6 +14,15 @@ class TicketController extends Controller
         return view('city.' . $city. '.ticket', ['tickets' => $ticket]);
     }
 
+
+    public function edit($id)
+    {
+        $movie = DB::table('tickets')
+            ->where('id', $id)
+            ->first();
+        return view('city.edit', ['movie' => $movie]);
+    }
+
     public function store(Request $request)
     {
         $validatedData = $request->validate([
@@ -27,9 +36,11 @@ class TicketController extends Controller
             'city' => 'required',
         ]);
 
+        $price = 
+
         $ticket = new Ticket();
         $ticket->name = $request->name;
-        $ticket->director = $request->phone;
+        $ticket->phone = $request->phone;
         $ticket->seat = $request->seat;
         $ticket->time = $request->date;
         $ticket->price = $request->price * $request->seat;

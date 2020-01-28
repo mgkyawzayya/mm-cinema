@@ -21,9 +21,9 @@ class CinemaController extends Controller
 
     public function show($city, $id)
     {
-        $cinema = DB::table('cinemas')->where('id', $id)->get();
-
-        return view('cinemas.show', [ 'cinema' => $cinema ]);
+        $cinema = DB::table('cinemas')->where('id', $id)->first();
+        $movie = DB::table('movies')->where('id', $cinema->movieId)->first();
+        return view('cinemas.show', [ 'cinema' => $cinema, 'movie' => $movie ]);
     }
 
     public function create($city)

@@ -213,7 +213,7 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label class="bmd-label-floating">Enter Movie ID</label>
-                                                <input type="number" name="phmovieIdone" class="form-control">
+                                                <input type="number" name="movieId" class="form-control">
                                             </div>
                                         </div>
                                     </div>

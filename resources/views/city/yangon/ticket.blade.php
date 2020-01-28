@@ -212,10 +212,10 @@
                                                     {{ $ticket->date }}
                                                 </td>
                                                 <td class="td-actions">
-                                                    <a href="{{ url('/movie/edit/' . $movie->id) }}" class="btn btn-success btn-round">
+                                                    <a href="{{ url('/ticket/edit/' . $ticket->id) }}" class="btn btn-success btn-round">
                                                         <i class="material-icons">edit</i>
                                                     </a>
-                                                    <form action="{{ url('/movie/destroy/' . $movie->id) }}" method="post">
+                                                    <form action="{{ url('/ticket/destroy/' . $ticket->id) }}" method="post">
                                                         {{ csrf_field() }}
                                                         {{ method_field('delete') }}
                                                         <button class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this item?');">

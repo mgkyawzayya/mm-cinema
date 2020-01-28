@@ -54,6 +54,8 @@
             </div>
         </div>
     </nav>
+
+
     <div class="page-header header-filter header-small" data-parallax="true"
          style="background-image: url('../images/movie.jpg');">
         <div class="container">
@@ -64,37 +66,33 @@
             </div>
         </div>
     </div>
+
     <div class="main main-raised">
         <div class="container">
             @foreach($cinemas as $cinema)
-                <div class="row">
-                    <a class="col-md-12 card" href="{{ url('cinemas/'. $cinema->city .'/cinema/show'. $cinema->id) }}">
-                        <div class="card card-plain card-blog">
-
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="card-header card-header-image">
-                                        <a href="">
-                                            <img class="img card-avatar" src="../images/movie-1.jpg">
-                                        </a>
-                                        <div class="colored-shadow" style="opacity: 1;"></div>
-                                    </div>
-                                </div>
-                                <div class="col-md-8">
-                                    <h3 class="card-title text-center">
-                                        <a href="{{ url('cinemas/'. $cinema->city .'/cinema/show'. $cinema->id) }}">{{ $cinema->name }}</a>
-                                    </h3>
-                                    <h4 class="card-title">
-                                        Address - {{ $cinema->address }}
-                                    </h4>
-                                    <h4 class="card-title">
-                                        Phone - {{ $cinema->phone }}
-                                    </h4>
-                                    <a href="{{ url('cinemas/'. $cinema->city .'/cinema/show'. $cinema->id) }}" class="btn btn-info">Details</a>
-                                </div>
+                <div class="card card-plain responsive cinema-item">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card-header img-responsive card-header-image">
+                                <a href="{{ url('cinemas/'. $cinema->city .'/cinema/show/'. $cinema->id) }}">
+                                    <img class="img" src="{{ asset('images/cinemas/'. $cinema->photo) }}">
+                                </a>
                             </div>
                         </div>
-                    </a>
+                        <div class="col-md-8">
+                            <h3 class="card-title text-center">
+                                <a href="{{ url('cinemas/'. $cinema->city .'/cinema/show/'. $cinema->id) }}">{{ $cinema->name }}</a>
+                            </h3>
+                            <h4 class="card-title">
+                                Address - {{ $cinema->address }}
+                            </h4>
+                            <h4 class="card-title">
+                                Phone - {{ $cinema->phone }}
+                            </h4>
+                            <a href="{{ url('cinemas/'. $cinema->city .'/cinema/show/'. $cinema->id) }}"
+                               class="btn btn-info">Details</a>
+                        </div>
+                    </div>
                 </div>
             @endforeach
         </div>

@@ -36,16 +36,16 @@
               <i class="material-icons">local_movies</i> Cinemas
             </a>
             <div class="dropdown-menu dropdown-with-icons">
-              <a href="{{ url('city/yangon') }}" class="dropdown-item">
+              <a href="{{ url('cinemas/yangon') }}" class="dropdown-item">
                 <i class="material-icons">location_city</i> Yangon
               </a>
-              <a href="{{ url('city/mandalay') }}" class="dropdown-item">
+              <a href="{{ url('cinemas/mandalay') }}" class="dropdown-item">
                 <i class="material-icons">location_city</i> Mandalay
               </a>
-              <a href="{{ url('city/naypyitaw') }}" class="dropdown-item">
+              <a href="{{ url('cinemas/naypyitaw') }}" class="dropdown-item">
                 <i class="material-icons">location_city</i> Nay Pyi Taw
               </a>
-              <a href="{{ url('city/pakokku') }}" class="dropdown-item">
+              <a href="{{ url('cinemas/pakokku') }}" class="dropdown-item">
                 <i class="material-icons">location_city</i> Pakokku
               </a>
             </div>
@@ -73,25 +73,25 @@
               <div class="col-md-4">
                 <div class="card-header card-header-image">
                   <a href="">
-                    <img class="img" src="../../images/movie-1.jpg">
+                    <img class="img" src="{{ asset('/images/movies/'. $movie->photo) }}">
                   </a>
                   <div class="colored-shadow" style="opacity: 1;"></div></div>
               </div>
               <div class="col-md-8">
                 <h2 class="card-title">
-                  Title - Sonic The Head Dog
+                  Title - {{ $movie->title}}
                 </h2>
                 <h4 class="card-title">
-                  Directed By -
+                  Directed By - {{ $movie->director }}
                 </h4>
                 <h4 class="card-title">
-                  Cast -
+                  Cast - {{ $movie->cast }}
                 </h4>
                 <h4 class="card-title">
-                  Address -
+                  Address - {{ $cinema->address }}
                 </h4>
                 <h4 class="card-title">
-                  Phone -
+                  Phone - {{ $cinema->phone }}
                 </h4>
                 <hr>
                 <div class="col-lg-6 col-md-6">
@@ -175,7 +175,7 @@
                         <i class="material-icons">timer</i>
                       </span>
                     </div>
-                    <select id="time" class="form-control" required>
+                    <select id="time" name="time" class="form-control" required>
                       <option value="" label="" selected hidden></option>
                       <option name="time">10:30PM</option>
                       <option name="time">1:00PM</option>
@@ -190,11 +190,11 @@
                         <i class="material-icons">attach_money</i>
                       </span>
                     </div>
-                    <select id="price" class="form-control" required>
-                      <option value="" label="&nbsp;" selected hidden></option>
-                      <option name="price">1200KS</option>
-                      <option name="price">2000KS</option>
-                      <option name="price">2800KS</option>
+                    <select id="price" name="price" class="form-control" required>
+                      <option value=""  label="&nbsp;" selected hidden></option>
+                      <option name="price">1200</option>
+                      <option name="price">2000</option>
+                      <option name="price">2800</option>
                     </select>
                   </div>
                 </div>

@@ -249,7 +249,7 @@
                     </th>
                     </thead>
                     <tbody>
-                    @foreach( $nows as $movie)
+                    @foreach( $comings as $movie)
                         <tr>
                             <td>
                                 {{ $movie->title }}
