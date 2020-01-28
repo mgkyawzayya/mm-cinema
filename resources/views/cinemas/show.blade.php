@@ -55,7 +55,7 @@
     </div>
   </nav>
   <div class="page-header header-filter header-small" data-parallax="true"
-       style="background-image: url('../../images/movie.jpg');">
+       style="background-image: url('public/images/movie.jpg');">
     <div class="container">
       <div class="row">
         <div class="col-md-8 ml-auto mr-auto text-center">
